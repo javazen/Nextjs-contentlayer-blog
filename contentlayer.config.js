@@ -1,4 +1,3 @@
-@ -0,0 +1,52 @@
 import { makeSource, defineDocumentType } from '@contentlayer/source-files'
 
 const Blog = defineDocumentType(() => ({
