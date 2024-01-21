@@ -23,10 +23,15 @@ const HomeCoverSection = ({blogs}) => {
 
       <div className='w-3/4 p-16 flex flex-col items-start justify-center z-0 text-light'>
         <Tag link={`/categories/${latestBlog.tags[0]}`} name={latestBlog.tags[0]} />
-        <h1>
-          {latestBlog.title}
-        </h1>
-        <p>
+        <Link href={latestBlog.url} className='mt-6'>
+          <h1 className='font-bold capitalize text-4xl'>
+            <span className='bg-gradient-to-r from-accent to-accent bg-[length:0px_6px] 
+            hover:bg-[length:100%_6px] bg-left-bottom bg-no-repeat transition-[background-size duration-500]'>
+            {latestBlog.title}
+            </span>
+          </h1>
+        </Link>
+        <p className='inline-block mt-4 text-xl font-in'>
           {latestBlog.description}
         </p>
       </div>
