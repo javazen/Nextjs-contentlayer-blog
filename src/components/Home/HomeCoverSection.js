@@ -8,7 +8,8 @@ const HomeCoverSection = ({blogs}) => {
     const latestBlog = sortedBlogs[0];
     console.log(latestBlog.image.filePath);
   return (
-    <article>
+    <div className='w-full inline-block'>
+      <article className='flex flex-col items-start justify-end mx-10 relative h-[85vh]'>
       <Image src={latestBlog.image.filePath.replace("../public", "")} 
       placeholder='blur'
       blurDataURL={latestBlog.image.blurhashDataUrl}
@@ -16,8 +17,9 @@ const HomeCoverSection = ({blogs}) => {
       fill
       className='w-full h-full object-center object-cover rounded-3xl '
       />
-
     </article>
+
+    </div>
   )
 }
 
