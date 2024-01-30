@@ -3,6 +3,7 @@ import readingTime from 'reading-time'
 import remarkGfm from 'remark-gfm'
 import rehypeSlug from 'rehype-slug'
 import rehypeAutolinkHeadings from 'rehype-autolink-headings'
+import rehypePrettyCode from 'rehype-pretty-code'
 
 const Blog = defineDocumentType(() => ({
     name: 'Blog',
@@ -53,10 +54,19 @@ const Blog = defineDocumentType(() => ({
       },
   }))
   
+const codeOptions = {
+  theme: 'github-dark'
+}
 
 export default makeSource({
   /* options */
   contentDirPath: 'content',
   documentTypes: [Blog],
-  mdx: {remarkPlugins: [remarkGfm], rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, {behavior:"append"}]] }
+  mdx: {
+    remarkPlugins: [remarkGfm], 
+    rehypePlugins: [
+      rehypeSlug, 
+      [rehypeAutolinkHeadings, {behavior:"append"}],
+      [rehypePrettyCode, codeOptions]
+    ] }
 })
