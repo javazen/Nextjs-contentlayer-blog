@@ -3,6 +3,7 @@ import Tag from '@/src/components/Elements/Tag'
 import Image from 'next/image';
 import BlogDetails from '@/src/components/Blog/BlogDetails'
 import RenderMdx from '@/src/components/Blog/RenderMdx'
+import { slug } from 'github-slugger'
 
 
 export default function BlogPage({ params }) {
@@ -14,8 +15,11 @@ export default function BlogPage({ params }) {
         <div className='mb-8 text-center relative w-full h-[70vh] bg-dark'>
             <div className='w-full z-10 flex flex-col items-center justify-center absolute
             top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2'>
-                <Tag name={blog.tags[0]} link={`/categories/blog.tags[0]`}
-                className="px-6 py-2 text-sm" />
+                <Tag 
+                    name={blog.tags[0]} 
+                    link={`/categories/${slug(blog.tags[0])}`}
+                    className="px-6 py-2 text-sm"
+                />
                 <h1 className='inline-block mt-6 font-semibold capitalize text-light text-5xl leading-normal
                 relative w-5/6'>
                     {blog.title}
