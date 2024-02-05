@@ -1,6 +1,7 @@
 import { allBlogs } from 'contentlayer/generated'
 import { slug } from 'github-slugger'
 import Categories from '@/src/components/Blog/Categories'
+import BlogLayoutThree from '@/src/components/Blog/BlogLayoutThree'
 
 
 const CategoryPage = ({params}) => {
@@ -29,6 +30,16 @@ const CategoryPage = ({params}) => {
             </span>
         </div>
         <Categories categories={allCategories} currentSlug={params.slug} />
+
+        <div className='grid grid-cols-3 grid-rows-2 gap-16 mt-24 px-32'>
+            {
+                blogs.map((blog, index) => {
+                    return <article key={index} className='col-span-1 row-span-1 relative'>
+                        <BlogLayoutThree blog={blog} />
+                    </article>
+                })
+            }
+        </div>
     </article>
 
     )
