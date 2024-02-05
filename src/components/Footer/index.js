@@ -11,7 +11,7 @@ const Footer = () => {
         formState: { errors } 
     } = useForm();
     const onSubmit = data => console.log(data);
-    console.log(errors);
+    // console.log(errors);
 
     return (
     <footer className='mt-16 rounded-2xl bg-dark m-10 flex flex-col items-center text-light'>
