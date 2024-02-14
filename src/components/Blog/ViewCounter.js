@@ -28,8 +28,34 @@ const ViewCounter = ({slug, noCount=false, showCount=true}) => {
         
         }, [slug, noCount])
 
+    useEffect(() => {
+        const getViews = async () => {
+            try {
+                let { data, error } = await supabase
+                .from('views')
+                .select('count')
+                .match({slug:slug})
+                .single()
+
+                if (error) {
+                    console.error('Error during increment inside try: ', error)
+                }
+
+                // console.log(data);
+
+                setViews(data ? data.count : 0)
+            } catch(error) {
+                console.error('Error during increment: ', error)
+            }
+        }
+
+        getViews();
+        
+        }, [slug])
+
     
     if (showCount) {
+        console.log(`incrementView: views=${views}`)
         return (
             <div>{views} views</div>
           )
