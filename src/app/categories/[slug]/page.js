@@ -24,6 +24,14 @@ export async function generateStaticParams() {
     return paths;
   }
 
+  export async function generateMetadata({ params }) {
+    const desc = params.slug === 'all' ? 'web development' : params.slug;
+    return {
+        title: `${params.slug.replaceAll('-',' ')} Blogs`,
+        description: `Learn more about ${desc} through our collection of expert blogs and tutorials`,
+    }
+}
+
 const CategoryPage = ({params}) => {
     // console.log(params)
     const allCategories = ["all"];
