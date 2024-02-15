@@ -55,7 +55,7 @@ const ViewCounter = ({slug, noCount=false, showCount=true}) => {
 
     
     if (showCount) {
-        console.log(`incrementView: views=${views}`)
+        // console.log(`incrementView: views=${views}`)
         return (
             <div>{views} views</div>
           )
