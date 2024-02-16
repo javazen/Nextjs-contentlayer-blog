@@ -4,6 +4,7 @@ import { cx } from '@/src/utils/index'
 import Header from '@/src/components/Header'
 import Footer from '@/src/components/Footer'
 import siteMetadata from '../utils/siteMetadata'
+import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'], display:"swap", variable:"--font-in" })
 const manrope = Manrope({ subsets: ['latin'], display:"swap", variable:"--font-mr" })
@@ -48,7 +49,19 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={cx(inter.variable, manrope.variable, "font-mr bg-light")}>
+      <body className={cx(inter.variable, manrope.variable, "font-mr bg-light dark:bg-dark")}>
+        <Script>
+          {`
+            const localTheme = localStorage.getItem('theme');
+            if (localTheme === 'dark' || ((localTheme === undefined) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+              document.documentElement.classList.add('dark')
+            } else {
+              document.documentElement.classList.remove('dark')
+            }
+            // const classList = document.documentElement.classList;
+            // console.log('Body Script: ' + classList);
+            `}
+        </Script>
         <Header />
         {children}
         <Footer />
