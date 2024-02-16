@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import { LinkedinIcon, TwitterIcon, GithubIcon, DribbbleIcon, SunIcon, MoonIcon } from "../Icons"
+import siteMetadata from "@/src/utils/siteMetadata";
 
 const Header = () => {
   return (
@@ -14,10 +15,10 @@ const Header = () => {
         <button><SunIcon /></button>
         </nav>
         <div>
-        <a href="http://linkedin.com" className="inline-block w-6 h-6 mr-4"><LinkedinIcon className="hover:scale-125 transition-all ease duration-150"/></a>
-        <a href="http://twitter.com"  className="inline-block w-6 h-6 mr-4"><TwitterIcon className="hover:scale-125 transition-all ease duration-150"/></a>
-        <a href="http://github.com"  className="inline-block w-6 h-6 mr-4"><GithubIcon className="hover:scale-125 transition-all ease duration-150"/></a>
-        <a href="http://dribbble.com"  className="inline-block w-6 h-6 mr-4"><DribbbleIcon className="hover:scale-125 transition-all ease duration-150"/></a>
+        <a href={siteMetadata.linkedin} className="inline-block w-6 h-6 mr-4"><LinkedinIcon className="hover:scale-125 transition-all ease duration-150"/></a>
+        <a href={siteMetadata.twitter}  className="inline-block w-6 h-6 mr-4"><TwitterIcon className="hover:scale-125 transition-all ease duration-150"/></a>
+        <a href={siteMetadata.github}  className="inline-block w-6 h-6 mr-4"><GithubIcon className="hover:scale-125 transition-all ease duration-150"/></a>
+        <a href={siteMetadata.dribbble}  className="inline-block w-6 h-6 mr-4"><DribbbleIcon className="hover:scale-125 transition-all ease duration-150"/></a>
         </div>
     </header>
   )

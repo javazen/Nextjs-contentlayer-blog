@@ -3,6 +3,7 @@ import React from 'react'
 import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { LinkedinIcon, TwitterIcon, GithubIcon, DribbbleIcon } from "../Icons"
+import siteMetadata from '@/src/utils/siteMetadata';
 
 const Footer = () => {
     const { 
@@ -33,14 +34,10 @@ const Footer = () => {
             <input type="submit" className='bg-dark text-light cursor-pointer font-medium roudned px-5 py-1'/>
         </form>
         <div className='flex items-center mt-8'>
-            <a href="http://linkedin.com" className="inline-block w-6 h-6 mr-4">
-                <LinkedinIcon className="hover:scale-125 transition-all ease duration-150"/></a>
-            <a href="http://twitter.com"  className="inline-block w-6 h-6 mr-4">
-                <TwitterIcon className="hover:scale-125 transition-all ease duration-150"/></a>
-            <a href="http://github.com"  className="inline-block w-6 h-6 mr-4">
-                <GithubIcon className="hover:scale-125 transition-all ease duration-150 fill-light"/></a>
-            <a href="http://dribbble.com"  className="inline-block w-6 h-6 mr-4">
-                <DribbbleIcon className="hover:scale-125 transition-all ease duration-150"/></a>
+            <a href={siteMetadata.linkedin} className="inline-block w-6 h-6 mr-4"><LinkedinIcon className="hover:scale-125 transition-all ease duration-150"/></a>
+            <a href={siteMetadata.twitter}  className="inline-block w-6 h-6 mr-4"><TwitterIcon className="hover:scale-125 transition-all ease duration-150"/></a>
+            <a href={siteMetadata.github}  className="inline-block w-6 h-6 mr-4"><GithubIcon className="hover:scale-125 transition-all ease duration-150 fill-light"/></a>
+            <a href={siteMetadata.dribbble}  className="inline-block w-6 h-6 mr-4"><DribbbleIcon className="hover:scale-125 transition-all ease duration-150"/></a>
         </div>
 
         <div className='w-full mt-24 relative font-medium border-t border-solid border-light 
