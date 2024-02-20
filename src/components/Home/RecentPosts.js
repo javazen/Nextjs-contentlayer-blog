@@ -6,15 +6,17 @@ import BlogLayoutThree from '@/src/components/Blog/BlogLayoutThree'
 const RecentPosts = ({blogs}) => {
     const sortedBlogs = sortBlogs(blogs);
   return (
-    <section className='w-full mt-32 px-32 flex flex-col items-center justify-center'>
+    <section className='w-full mt-16 sm:mt-32 md:mt-32 px-5 sm:px-10 md:px-24 lg:px-32 flex flex-col items-center justify-center'>
         <div className='flex w-full justify-between'>
-            <h2 className='inline-block font-bold capitalize text-4xl'>
+            <h2 className='w-fit inline-block font-bold capitalize text-dark dark:text-light text-2xl md:text-4xl'>
             Recent Posts
             </h2>
-            <Link href="/categories/all" className='inline-block font-medium text-accent underline underline-offset-2 text-lg'>view all</Link>
+            <Link href="/categories/all" 
+            className='inline-block font-medium text-accent dark:text-accentDark underline underline-offset-2 text-base md:text-lg'
+            >view all</Link>
         </div>
 
-        <div className='grid grid-cols-3 grid-rows-2 gap-16 mt-16'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 grid-rows-2 gap-16 mt-16'>
             {
                 sortedBlogs.slice(4, 10).map((blog, index) => {
                     return <article key={index} className='col-span-1 row-span-1 relative'>
