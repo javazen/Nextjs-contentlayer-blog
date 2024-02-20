@@ -4,8 +4,8 @@ import profileCharacter from '@/public/character.png'
 
 const AboutCoverSection = () => {
   return (
-    <section className='w-full h-[75vh] border-b-2 border-solid border-dark flex flex-row items-center justify-center text-dark'>
-        <div className='w-1/2 h-full border-r-2 border-solid border-dark flex justify-center'>
+    <section className='w-full h-[75vh] border-b-2 border-solid border-dark dark:border-light flex flex-row items-center justify-center text-dark dark:text-light'>
+        <div className='w-1/2 h-full border-r-2 border-solid border-dark dark:border-light flex justify-center'>
             <Image src={profileCharacter} alt="moi"
             className='w-full h-full object-contain object-center'
             />
