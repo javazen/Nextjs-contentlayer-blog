@@ -11,7 +11,7 @@ export default function About() {
     return <>
     <AboutCoverSection />
     <Skills />
-    <h2 className='mt-8 mx-20 font-semibold text-2xl text-dark dark:text-light self-start'>
+    <h2 className='mt-8 mx-5 xs:mx-10 sm:mx-12 md:mx-16 lg:mx-20 font-semibold dark:font-normal text-lg md:text-2xl text-dark dark:text-light self-start'>
     Have a project in mind? Reach out to me 📞 from <Link href="/contact" className="!underline 
     underline-offset-2">here</Link> and let's make it happen.
     </h2>
