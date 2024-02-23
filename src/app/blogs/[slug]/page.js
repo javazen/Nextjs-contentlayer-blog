@@ -91,8 +91,8 @@ export default function BlogPage({ params }) {
                     <ul className='mt-4 font-in text-base'>
                         {
                             blog.toc.map(heading => {
-                                return <li key={`#${heading.slug}`} className='py-1'>
-                                    <a href={`${heading.slug}`}
+                                return <li key={`${heading.slug}`} className='py-1'>
+                                    <a href={`#${heading.slug}`}
                                     data-level={heading.level}
                                     className="data-[level=two]:pl-0 data-[level=two]:pt-2 
                                     data-[level=two]:border-t data-[level=two]:border-solid data-[level=two]:border-dark/40
