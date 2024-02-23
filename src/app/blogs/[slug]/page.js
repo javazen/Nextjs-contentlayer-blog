@@ -96,7 +96,8 @@ export default function BlogPage({ params }) {
                                     data-level={heading.level}
                                     className="data-[level=two]:pl-0 data-[level=two]:pt-2 
                                     data-[level=two]:border-t data-[level=two]:border-solid data-[level=two]:border-dark/40
-                                    data-[level=three]:pl-6
+                                    data-[level=three]:pl-4
+                                    sm:data-[level=three]:pl-6
                                     flex items-center justify-start
                                     ">
                                     {

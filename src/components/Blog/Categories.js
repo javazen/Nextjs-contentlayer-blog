@@ -6,7 +6,8 @@ const Categories = ({categories, currentSlug}) => {
     // console.log("Categories: "+categories )
     // console.log("currentSlug: "+currentSlug )
   return (
-    <div className='px-20 mt-10 text-dark border-t-2 border-b-2 border-solid border-dark
+    <div className='px-0 md:px-10 sxl:px-20 mt-10 text-dark dark:text-light 
+    border-t-2 border-b-2 border-solid border-dark dark:border-light
     py-4 items-start flex flex-wrap font-medium mx-10'>
         {categories.map(cat => 
             <Category 
