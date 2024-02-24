@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useForm } from 'react-hook-form';
 import { LinkedinIcon, TwitterIcon, GithubIcon, DribbbleIcon } from "../Icons"
 import siteMetadata from '@/src/utils/siteMetadata';
+import { isDevEnvironment } from '@/src/utils'
 
 const Footer = () => {
     const { 
@@ -40,9 +41,14 @@ const Footer = () => {
             <a href={siteMetadata.dribbble}  className="inline-block w-6 h-6 mr-4"><DribbbleIcon className="hover:scale-125 transition-all ease duration-150"/></a>
         </div>
 
-        <div className='w-full mt-16 md:mt-24 relative font-medium border-t border-solid border-light 
-        py-6 px-8 flex flex-col md:flex-row items-center justify-between'>
-            <span className='text-center'>&copy;2023 CodeBucks. All rights reserved.</span>
+        <div className='w-full mt-16 md:mt-20 relative font-medium border-t border-solid border-light 
+        py-6 px-8 flex flex-col lg:flex-row items-center justify-between'>
+            <span className='text-center'>
+                &copy;2023 CodeBucks. All rights reserved.         
+            </span>
+            <div className='text-center'>
+                -- {(isDevEnvironment) ? 'Dev code' : 'Production code'}  --
+            </div>
             <Link href="/sitemap" className='text-center underline py-4 md:py-0'>
                 sitemap.xml
             </Link>

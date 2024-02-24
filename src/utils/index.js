@@ -12,3 +12,5 @@ export const sortBlogs = (blogs) => {
             parseISO(b.publishedAt) )
     )
 }
+
+export const isDevEnvironment = process && process.env.NODE_ENV === "development";
