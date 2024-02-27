@@ -3,7 +3,7 @@ import { Inter, Manrope } from 'next/font/google'
 import { cx } from '@/src/utils/index'
 import Header from '@/src/components/Header'
 import Footer from '@/src/components/Footer'
-import siteMetadata from '../utils/siteMetadata'
+import siteMetadata from '@/src/utils/siteMetadata'
 import Script from 'next/script'
 
 const inter = Inter({ subsets: ['latin'], display:"swap", variable:"--font-in" })
@@ -48,19 +48,17 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning={true}>
       <body className={cx(inter.variable, manrope.variable, "font-mr bg-light dark:bg-dark")}>
-        <Script>
+        <Script id="theme-switcher" strategy="beforeInteractive">
           {`
-            const localTheme = localStorage.getItem('theme');
-            if (localTheme === 'dark' || ((localTheme === undefined) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          const localTheme = localStorage.getItem('theme');
+          if (localTheme === 'dark' || ((localTheme === undefined) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
               document.documentElement.classList.add('dark')
-            } else {
+          } else {
               document.documentElement.classList.remove('dark')
-            }
-            // const classList = document.documentElement.classList;
-            // console.log('Body Script: ' + classList);
-            `}
+          }
+          `}
         </Script>
         <Header />
         {children}
